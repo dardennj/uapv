@@ -1,0 +1,865 @@
+
+html, body {
+    background: none repeat scroll 0 0 #f2ede7;
+    color: #38332c;
+    font-family: Arial,Verdana,Tahoma !important;
+    font-size: 0.95em;
+}
+
+h1{
+    font-size: 18px;
+}
+
+.uapv_wrapper {
+    padding: 0;
+}
+a, a:hover {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff6600;
+}
+
+.uapv_wrapper {
+    background: none repeat scroll 0 0 #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px #8a7e6b;
+    height: auto;
+    margin: 2em auto;
+    min-height: 800px;
+    overflow-x: hidden;
+    overflow-y: visible;
+    width: 970px;
+}
+[class*="span"] {
+    margin-bottom: 20px;
+}
+h2 {
+    margin-left: 20px;
+}
+.hidden {
+    display: none;
+}
+#icone_fleche {
+    width: 80px;
+}
+.input-chiffre {
+    width: 20px;
+}
+.form-horizontal .control-label {
+    text-align: left;
+}
+.form-control {
+    display: inline !important;
+    width: 90% !important;
+}
+.separateur {
+    border-left: 1px solid #d2e2e2;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.help-block {
+    color: #aaa7a7;
+    font-size: 0.8em;
+}
+.margin-bottom {
+    border-bottom: 1px solid #e2e2e2;
+    margin-bottom: 10px;
+}
+
+.terms
+{
+    text-align: left !important;
+    float: left;
+    margin-left: 8px;
+    margin-top: 6px;
+}
+
+#mdpOubli
+{
+    width: 400px;
+    padding: 1em;
+}
+
+
+#Termes
+{
+    max-width: 800px;
+    text-align: justify;
+    padding: 1em;
+}
+
+.termsValidate
+{
+    margin-top: 1em;
+    text-align: justify !important;
+    font-size: 14px;
+    font-style: italic;
+
+}
+
+.validTerm
+{
+    text-align: center;
+}
+
+.well {
+    padding: 7px;
+}
+.admin_bar {
+    width: 35%;
+}
+.admin_list_table table {
+    width: 60%;
+}
+#addChamp {
+    background-color: #f5f5f5;
+    box-shadow: 1px 1px 12px #ccc;
+    margin-left: 0;
+    padding: 5px;
+    text-align: center;
+}
+#addChamp:hover {
+    background-color: #eeeeee;
+    cursor: pointer;
+}
+.button {
+    float: right;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+.radio input {
+    margin-left: 10px;
+}
+.inline-li li {
+    display: inline;
+}
+.inline-li ul {
+    list-style-type: none;
+}
+.inline-li ul {
+    float: right;
+    margin-left: 0;
+    width: 90%;
+}
+.many-input {
+    margin-top: 10px;
+}
+.ui-tabs-vertical {
+    width: 55em;
+}
+.ui-tabs-vertical .ui-tabs-nav {
+    float: left;
+    width: 12em;
+}
+.ui-tabs-vertical .ui-tabs-nav li {
+    border-bottom-width: 1px !important;
+    border-right-width: 0 !important;
+    clear: left;
+    margin: 0 -1px 0.2em 0;
+    width: 100%;
+}
+.ui-tabs-vertical .ui-tabs-nav li a {
+    display: block;
+}
+.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active {
+    background-color: #f9f9f9;
+    border-right-width: 1px;
+    padding-bottom: 0;
+    padding-right: 0.1em;
+}
+.ui-tabs-vertical .ui-tabs-panel {
+    float: right;
+    padding-left: 0;
+    width: 40em;
+}
+#menu-onglet {
+    background-color: white;
+    border: medium none;
+    margin-top: 70px;
+}
+#menu-onglet li {
+    background-color: white;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+#header {
+    background-color: #f2ede7;
+    border: 1px solid #cccccc;
+    height: 20px;
+    left: 0;
+    margin-top: 10px;
+    width: 100%;
+}
+#logo {
+    box-shadow: 1px 1px 12px #555555;
+    float: left;
+    margin-left: 20px;
+    margin-top: 5px;
+    position: absolute;
+}
+.uapv_header, #recrutement_title {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.4);
+    color: #4195cd;
+    font-size: 28px;
+    font-variant: small-caps;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+    text-shadow: 3px 3px 3px #95cef4;
+    width: 100%;
+}
+#toolbar {
+    background: -moz-linear-gradient(center top , #feffff 0%, #f5f5f5 100%) repeat scroll 0 0 transparent;
+    border-bottom: 1px solid #e9e8e8;
+    border-top: 1px solid #e9e8e8;
+    color: #707070;
+    font-size: 11px;
+    font-style: italic;
+    padding-top: 2px;
+    z-index: 100;
+}
+#toolbar p {
+    margin-bottom: 0;
+    margin-right: 10px;
+    text-align: right;
+}
+.page-header {
+    background: none repeat scroll 0 0 #fcfaf7;
+    height: 100px;
+    margin-top: 0 !important;
+    padding: 0;
+    position: relative;
+}
+.page-content {
+    margin: 20px auto 0;
+    min-height: 600px;
+}
+.row-fluid {
+    margin-bottom: 20px;
+}
+.uapv_footnote {
+    color: #75726f;
+    left: 0;
+    margin-top: 10px;
+    width: 100%;
+}
+.uapv_footnote {
+    opacity: 50;
+    text-align: center;
+}
+.erreurForm {
+    display: none;
+    float: none;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-top: 5px;
+    padding: 5px;
+}
+.triangle-border {
+    background: none repeat scroll 0 0 #ffba9b;
+    border: 2px solid red;
+    border-radius: 10px;
+    color: red;
+    margin: 1em 0 3em;
+    position: relative;
+}
+.triangle-border.left:after {
+    border-color: transparent #ffffff;
+    border-width: 9px 21px 9px 0;
+    bottom: auto;
+    left: -21px;
+    top: 6px;
+}
+.triangle-border:after {
+    border-color: #ffffff transparent;
+    border-style: solid;
+    border-width: 13px 13px 0;
+    bottom: -13px;
+    content: "";
+    display: block;
+    left: 47px;
+    position: absolute;
+    width: 0;
+}
+.triangle-border.left:before {
+    border-color: transparent #d1ce79;
+    border-width: 15px 30px 15px 0;
+    bottom: auto;
+    left: -30px;
+    top: 0;
+}
+.triangle-border:before {
+    border-color: #d1ce79 transparent;
+    border-width: 20px 20px 0;
+    bottom: -20px;
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    width: 0;
+}
+.triangle-border.left {
+    margin-left: 0;
+}
+.triangle-border {
+    background: none repeat scroll 0 0 #fffced;
+    border: 5px solid #d1ce79;
+    border-radius: 10px;
+    color: #708090;
+    margin: 1em 0 3em;
+    padding: 15px;
+    position: relative;
+}
+.erreurMess {
+    color: red;
+    font-size: 12px;
+    margin-left: 50px;
+}
+#noFiche {
+    border: 1px dashed #4195cd;
+    color: #707070;
+    font-size: 18px;
+    margin: 100px auto 0;
+    padding: 10px;
+    text-align: center;
+    width: 500px;
+}
+.noMore {
+    color: #707070;
+    text-align: center;
+}
+#commentaires {
+    background-color: #f2f8f9;
+    color: #999999;
+}
+.commentBulle {
+    cursor: pointer;
+    float: right;
+}
+#fileupload .fade {
+    opacity: 1 !important;
+}
+#fileupload .btn {
+    box-shadow: none;
+    text-shadow: none;
+}
+#fileupload .ui-widget {
+    color: #474747;
+    font-size: 12px;
+    font-weight: normal;
+}
+#fileupload .ui-widget .btn-danger {
+    color: white;
+}
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.uploadFile {
+    margin-left: 10px;
+}
+#fileupload .btn-success {
+    float: none;
+    font-size: 12px;
+    margin-left: 50px;
+    width: 200px;
+}
+#fileupload .row {
+    width: 450px;
+}
+#fileupload {
+    margin-top: -10px;
+}
+.filesView {
+    color: #464646;
+    font-size: 12px;
+    font-style: italic;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+.fichiers a {
+    margin-right: 5px;
+}
+.fichiers img {
+    width: 40px;
+}
+.fichiers {
+    margin-top: 20px;
+}
+.etatListe {
+    margin-left: 20px;
+    margin-top: 5px;
+    width: 80px;
+}
+.cadenas {
+    width: 15px;
+}
+.modal .modal-body {
+    overflow-x: hidden !important;
+}
+.ui-widget-header {
+    background: url("images/ui-bg_highlight-soft_75_cccccc_1x100.png") repeat-x scroll 50% 50% #cccccc !important;
+}
+#tableSalle td {
+    background-color: #fff;
+}
+.dateTr > td {
+    background-color: #f9f9f9 !important;
+}
+#messErreur {
+    background-color: #f2dede;
+    border: 1px solid #a94442;
+    color: #a94442;
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+}
+#presentationCadre h1 {
+    font-family: Arial;
+    font-size: 20px;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+#presentationCadre {
+    font-family: Arial;
+    padding: 50px;
+    text-align: justify;
+}
+#tempsReservation {
+    text-align: center;
+}
+#presentation {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+#probleme {
+    padding: 30px 50px 50px;
+}
+#probleme p {
+    color: #636363;
+    margin-top: 40px;
+}
+#probleme span {
+    color: #a7a7a7;
+}
+.carreCouleur {
+    height: 10px;
+    margin: 0 auto;
+    width: 10px;
+}
+.enCours {
+    background-color: orange;
+}
+.valide {
+    background-color: #008000;
+}
+.nonTraite {
+    background-color: #ff0000;
+}
+#legende {
+    border: 1px dashed #ccc;
+    border-radius: 2em 1em 4em / 0.5em 3em;
+    color: #898585;
+    font-size: 11px;
+    font-style: italic;
+    padding: 2px 5px;
+    text-align: justify;
+    width: 150px;
+}
+#legendeTitre {
+    color: #898585;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+#reglesHeader {
+    border-left: 5px solid #eee;
+    color: #707070;
+    font-size: 12px;
+    font-style: italic;
+    margin: 15px auto;
+    padding: 2px;
+    width: 70%;
+}
+#reglesHeader p {
+    margin-left: 10px;
+}
+#jquery-loader.blue-with-image {
+    background-position: center 70px !important;
+    border: 2px solid #ccc;
+    border-radius: 5px 10px;
+    box-shadow: 1px 1px 12px #555;
+}
+#jquery-loader {
+    height: auto;
+    padding: 20px;
+}
+.emailBox {
+    float: right;
+}
+.buttonFichier, .boutonSupprimer {
+    color: #474747 !important;
+    font-size: 0.8em !important;
+    font-weight: normal !important;
+}
+.boutonSupprimer {
+    border: medium none !important;
+    margin: 0 !important;
+    width: auto !important;
+}
+.ui-datepicker .ui-datepicker-calendar .ui-state-highlight a {
+    background: none repeat scroll 0 0 #743620;
+    color: white !important;
+}
+
+#dosi_recrutementbundle_reccandidat_terms
+{
+    float: right;
+    margin-left: 3em;
+    text-align: left;
+}
+
+#dosi_recrutementbundle_reccandidat div
+{
+    float: right;
+    text-align: right;
+    padding-right: 26px;
+}
+
+
+
+#dosi_recrutementbundle_login
+{
+    float: right;
+    text-align: right;
+}
+
+
+#dosi_recrutementbundle_login .control-group .controls
+{
+    text-align: center;
+    margin-top: 1em;
+}
+
+#dosi_recrutementbundle_form_create .control-group .controls
+{
+    text-align: center;
+}
+
+#dosi_recrutementbundle_form_create .control-group .controls button
+{
+    margin-top: 1em;
+}
+
+#dosi_recrutementbundle_form_create .form-group
+{
+    margin-bottom: 3px;
+}
+
+#cadre{
+    font-family: Arial;
+    margin-top: 5em;
+    padding: 50px;
+    text-align: justify;
+    margin-top: 5em;
+}
+
+#block_index .candidate
+{
+    font-size: 1.2em;
+    font-weight: 300;
+    text-align: center;
+}
+#block_index .candidate button
+{
+    margin-top: 1em;
+}
+
+div.info
+{
+    color: steelblue;
+    font-size: 1.2em;
+}
+
+
+#actions {
+    margin: 2em 0;
+}
+
+
+/* Mimic table appearance */
+div.table {
+    display: table;
+    margin-top: 1em;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.dz-image-preview
+{
+    min-height: 80px;
+}
+
+div.table .file-row {
+    display: table-row;
+}
+
+div.table .file-row div:first-child
+{
+    width: 450px;
+}
+
+div.table .file-row > div {
+    display: table-cell;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+    padding: 20px;
+    line-height: 0.4em;
+}
+div.table .file-row:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+
+
+/* The total progress gets shown by event listeners */
+#total-progress {
+    opacity: 0;
+    transition: opacity 0.3s linear;
+}
+
+/* Hide the progress bar when finished */
+#previews .file-row.dz-success .progress {
+    opacity: 0;
+    transition: opacity 0.3s linear;
+}
+
+#previews #template div p.name, #previews #template div p.cloture
+{
+    line-height: 1.2em;
+}
+
+div.isValidate p em.candValidate
+{
+    color: #008000;
+}
+
+div.isValidate p em.candNoValidate
+{
+    color: red;
+}
+
+div.isValidate p
+{
+    text-align: center;
+    line-height: 1.2em;
+}
+
+#previews .file-row.dz-success .delete {
+    display: block;
+}
+
+.dz-remove
+{
+    display: none;
+}
+
+#recDropZone
+{
+    margin-bottom: 2em;
+}
+
+div.logout
+{
+    float: right;
+    padding-right: 3.6em;
+}
+
+div.validate
+{
+    width: 100%;
+    margin: 2em 0;
+    text-align: center;
+}
+
+#dosi_recrutementbundle_reccandidature_candidatureStatut
+{
+    font-size: 1.2em !important;
+}
+
+.candidate .btn-retour
+{
+    margin-top: 1em;
+}
+
+#msgValidate
+{
+    width:100%;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 0.5em;
+}
+
+#msgValidate button
+{
+    margin-top: 1.5em;
+}
+
+#posteTitle
+{
+    width:100%;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.4em;
+    margin: 1em auto;
+}
+
+#carousselPostes
+{
+    width: 420px;
+    min-height: 200px;
+}
+
+.carousel-inner .item
+{
+    padding: 0.3em 1em;
+}
+
+.carousel-control.left, .carousel-control.right{
+    background-image: none;
+}
+
+.carousel-control .glyphicon-chevron-right, .carousel-control .glyphicon-chevron-left {
+    color: #2d6ca2;
+    margin-right: -50px;
+}
+
+.carousel-control .glyphicon-chevron-left {
+    margin-left: -50px !important;
+}
+
+.carousel-indicators
+{
+    bottom: -40px;
+}
+
+.carousel-indicators li{
+    background-color: #2d6ca2 !important;
+}
+
+div.carousel-inner div.item div.poste
+{
+    border: 1px solid #ddd;
+    padding: 10px 1em;
+}
+
+div.carousel-inner div.item div.poste:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+#confirm
+{
+    width: 400px;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 0.5em;
+}
+
+#confirm #what
+{
+    margin-bottom: 1em;
+}
+
+#meter
+{
+    float: right;
+}
+
+#meterFiles
+{
+    width: 100px;
+    height: 20px;
+    background-color: green;
+}
+
+#meterText
+{
+    font-size: 13px;
+    font-weight: 500;
+    margin-right: 1em;
+}
+
+#posteDescription, #posteFiche
+{
+    margin-bottom: 1em;
+}
+
+#posteFiche
+{
+    width: 100%;
+    text-align: center;
+}
+
+.allPostes {
+    float: right;
+    font-size: 14px;
+    margin-top: 8px;
+    vertical-align: bottom;
+}
+
+.dateCloture
+{
+    color: red;
+}
+
+.passwordLink
+{
+    margin-top: 0.6em;
+}
+
+#secteurs
+{
+    width: 100%;
+    text-align: center;
+    margin: 1em 0;
+}
+
+#block_docs
+{
+    width: 100%;
+    text-align: center;
+    margin: 1em 0;
+}
+
+#msgCandidat
+{
+    padding: 0.5em;
+}
+
+#changePassword, #sendMessage
+{
+    padding: 1em;
+
+}
+
+#dosi_recrutementbundle_reccandidatpwd div{
+    text-align: right;
+}
+
+.pwdSubmit, .msgSubmit{
+    text-align: center;
+    margin-top: 1em;
+}
+
+.resetPwd
+{
+    text-align: center;
+    margin-top: 1em;
+}
+
+.noPoste
+{
+    text-align: center;
+}
+

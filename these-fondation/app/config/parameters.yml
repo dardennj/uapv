@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: sql03c.univ-avignon.fr
+    database_port: null
+    database_name: these_fondation
+    database_user: these_fondation
+    database_password: vyMjmAR2
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: P5en4X7

@@ -1,0 +1,92 @@
+{% extends "DosiTheseFondationBundle:Backend:base.html.twig" %}
+
+{% block body %}
+
+
+    <h2>{{candidat.prenom|title}} {{candidat.nom|title}}</h2>
+
+
+    <div class="well">
+        <table class="info">
+            <tr><th>Date de soumission :</th><td>{{ candidat.dateCandidature  | date('d-m-Y')}}</td></tr>
+            <tr><th>Adresse :</th><td>{{ candidat.adresse}}</td></tr>
+            <tr><th>Téléphone :</th><td>{{ candidat.tel}}</td></tr>
+            <tr><th>Courriel :</th><td>{{ candidat.email}}</td></tr>
+            <tr><th>Parcours, diplômes :</th><td> <a target="_blank" href="{{ path('backend_candidat_document', {'id': candidat.diplomes.id}) }}">{{ candidat.diplomes.name}}</a></td></tr>
+        </table>
+    </div>
+
+    <div class="well">
+        <legend>{{ candidat.theseTitre}}</legend>
+        {{ candidat.theseResume}}
+    </div>
+    <div class="well">
+        <legend>Adéquation avec l'appel à projet </legend>
+        {{ candidat.theseAdeq}}
+    </div>
+    <div class="well">
+        <legend>Grandes lignes du programme de recherche envisagé </legend>
+        {{ candidat.theseProg}}
+    </div>
+    <div class="well">
+        <legend>Retombée pour le territoire </legend>
+        {{ candidat.theseRetour}}
+    </div>
+    <div class="well">
+        <legend>Encadrement et structure d'accueil</legend>
+        <table class="info">
+            <tr><th>Ecole Doctorale :</th><td>{{ candidat.theseStruct}}</td></tr>
+            <tr><th>Unité de recherche :</th><td>{{ candidat.theseUnite}}</td></tr>
+            <tr><th>Directeur de thèse  :</th><td>{{ candidat.theseDirecteur}}</td></tr>
+            <tr><th>Lettre / Directeur de thèse :</th><td> <a target="_blank" href="{{ path('backend_candidat_document', {'id': candidat.lettreDirThese.id}) }}">{{ candidat.lettreDirThese.name}}</a></td></tr>
+            <tr><th>Lettre / Directeur d'unité :</th><td> <a target="_blank" href="{{ path('backend_candidat_document', {'id': candidat.lettreDirUnite.id}) }}">{{ candidat.lettreDirUnite.name}}</a></td></tr>
+        </table>
+    </div>
+    <p>
+        <a href="{{ path('backend_candidat') }}" class="btn btn-primary">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour à la liste
+        </a>
+
+        <a href="{{ path('backend_candidat_delete', {'id': candidat.id}) }}" confirm="Etes-vous sûr(e) de vouloir supprimer cette candidature ?" class="btn btn-danger confirm">
+            <i class="glyphicon glyphicon-remove-sign"></i>
+            Supprimer
+        </a>
+    </p>
+
+    <div id="confirm" style="display: none;">
+        <p id="what"></p>
+        <p>
+            <a href="" class="btn btn-warning">
+                <i class="glyphicon glyphicon-remove"></i>
+                Non
+            </a>
+            <a href="" class="btn btn-success" id="valid">
+                <i class="glyphicon glyphicon-ok"></i>
+                Oui
+            </a>
+        </p>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".confirm").on('click', function (event){
+                event.preventDefault();
+                confirm = $(this).attr('confirm');
+                $('#confirm').children("#what").text(confirm);
+                href = $(this).prop('href');
+
+                $('#confirm').find("#valid").prop('href',href);
+
+                $.fancybox({
+                    'width': '50%',
+                    'autoScale': true,
+                    'transitionIn': 'fade',
+                    'transitionOut': 'fade',
+                    'href': '#confirm'
+                });
+            });
+        });
+    </script>
+
+{% endblock %}

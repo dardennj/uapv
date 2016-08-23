@@ -1,0 +1,5 @@
+dosi_these_fondation:
+    resource: "@DosiTheseFondationBundle/Resources/config/routing.yml"
+    prefix:   /
+
+

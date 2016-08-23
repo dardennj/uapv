@@ -1,0 +1,45 @@
+frontend_candidat:
+    path:     /
+    defaults: { _controller: DosiTheseFondationBundle:Frontend\Candidat:index}
+
+
+frontend_candidat_success:
+    path:     /success
+    defaults: { _controller: DosiTheseFondationBundle:Frontend\Candidat:success}
+
+backend:
+    path:     /backend
+    defaults: { _controller: DosiTheseFondationBundle:Backend\Backend:index}
+
+backend_candidat:
+    path:     /backend/candidat
+    defaults: { _controller: DosiTheseFondationBundle:Backend\Backend:candidat}
+
+backend_candidat_view:
+    path:     /backend/candidat/view/{id}
+    defaults: { _controller: DosiTheseFondationBundle:Backend\Backend:view}
+    requirements:
+        id:  \d+
+
+backend_candidat_delete:
+    path:     /backend/candidat/del/{id}
+    defaults: { _controller: DosiTheseFondationBundle:Backend\Backend:delete }
+    requirements:
+         id:  \d+
+
+backend_candidat_document:
+    path:     /backend/candidat/document/{id}
+    defaults: { _controller: DosiTheseFondationBundle:Backend\Backend:document }
+    requirements:
+         id:  \d+
+
+backend_histo_cand:
+    path:     /backend/candidat/histo
+    defaults: { _controller: DosiTheseFondationBundle:Backend\Backend:histo}
+
+backend_candidat_export:
+    path:     /backend/candidat/export
+    defaults: { _controller: DosiTheseFondationBundle:Backend\Backend:export}
+
+
+

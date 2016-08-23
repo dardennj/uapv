@@ -1,0 +1,618 @@
+<?php
+
+namespace Dosi\TheseFondationBundle\Entity;
+
+use APY\DataGridBundle\Grid\Mapping as GRID;
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+
+/**
+ * Candidat
+ *
+ * @ORM\Table(name="candidat")
+ * @ORM\HasLifecycleCallbacks
+ * @ORM\Entity(repositoryClass="Dosi\TheseFondationBundle\Entity\CandidatRepository")
+ * @GRID\Source(columns="id, nom, prenom,  email, dateCandidature")
+ */
+class Candidat
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Email()
+     * @GRID\Column(title="Email", size="150", type="text")
+     */
+    protected $email;
+
+    /**
+     * @ORM\Column(type="string", length=55)
+     * @Assert\NotBlank()
+     * @GRID\Column(title="Nom", size="150", type="text")
+     */
+    protected $nom;
+
+
+    /**
+     * @ORM\Column(type="string", length=55)
+     * @Assert\NotBlank()
+     * @GRID\Column(title="Prénom", size="150", type="text")
+     */
+    protected $prenom;
+
+    /**
+     * @ORM\Column(type="string", length=55)
+     * @Assert\NotBlank()
+     */
+    protected $adresse;
+
+    /**
+     * @ORM\Column(type="string", length=55)
+     * @Assert\NotBlank()
+     */
+    protected $tel;
+
+    /**
+     * @var string
+     * @ORM\Column(name="these_titre", type="text")
+     */
+    protected $these_titre;
+
+    /**
+     * @var string
+     * @ORM\Column(name="these_resume", type="text")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "1400",
+     *      minMessage = "Votre résumé doit faire au moins {{ limit }} caractères",
+     *      maxMessage = "Votre résumé ne peut pas être plus long que {{ limit }} caractères"
+     * )
+     */
+    protected $these_resume;
+
+    /**
+     * @var string
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "1400",
+     *      minMessage = "Votre texte doit faire au moins {{ limit }} caractères",
+     *      maxMessage = "Votre texte ne peut pas être plus long que {{ limit }} caractères"
+     * )
+     * @ORM\Column(name="these_adeq", type="text")
+     */
+    protected $these_adeq;
+
+    /**
+     * @var string
+     * @ORM\Column(name="these_prog", type="text")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "9800",
+     *      minMessage = "Votre programme doit faire au moins {{ limit }} caractères",
+     *      maxMessage = "Votre programme ne peut pas être plus long que {{ limit }} caractères"
+     * )
+     */
+    protected $these_prog;
+
+    /**
+     * @var string
+     * @ORM\Column(name="these_retour", type="text")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "1400",
+     *      minMessage = "Votre texte doit faire au moins {{ limit }} caractères",
+     *      maxMessage = "Votre texte ne peut pas être plus long que {{ limit }} caractères"
+     * )
+     */
+    protected $these_retour;
+
+    /**
+     * @var string
+     * @ORM\Column(name="these_struct", type="text")
+     */
+    protected $these_struct;
+
+    /**
+     * @var string
+     * @ORM\Column(name="these_unite", type="text")
+     */
+    protected $these_unite;
+
+    /**
+     * @var string
+     * @ORM\Column(name="these_directeur", type="text")
+     */
+    protected $these_directeur;
+
+    /**
+     * @ORM\Column(name="these_PB", type="boolean")
+     */
+    protected $these_PB;
+
+    /**
+     * @ORM\Column(name="these_JHF", type="boolean")
+     */
+    protected $these_JHF;
+
+    /**
+     * @var \DateTime
+     * @ORM\Column(name="date_candidature", type="datetime", nullable=true))
+     * @GRID\Column(title="Date de candidature", size="150", type="date", format="d/m/Y"),
+     */
+    protected $dateCandidature;
+
+    /**
+     *
+     * @ORM\OneToMany(targetEntity="Dosi\TheseFondationBundle\Entity\Document", mappedBy="candidature", cascade={"persist"})
+     **/
+    protected $diplomes;
+
+    /**
+     *
+     * @ORM\OneToOne(targetEntity="Dosi\TheseFondationBundle\Entity\Document", cascade={"persist"})
+     **/
+    protected $lettre_dir_these;
+
+    /**
+     *
+     * @ORM\OneToOne(targetEntity="Dosi\TheseFondationBundle\Entity\Document", cascade={"persist"})
+     **/
+    protected $lettre_dir_unite;
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     * @return Candidat
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string 
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     * @return Candidat
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string 
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Set prenom
+     *
+     * @param string $prenom
+     * @return Candidat
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    /**
+     * Get prenom
+     *
+     * @return string 
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * Set dateCandidature
+     *
+     * @param \DateTime $dateCandidature
+     * @return Candidat
+     */
+    public function setDateCandidature($dateCandidature)
+    {
+        $this->dateCandidature = $dateCandidature;
+
+        return $this;
+    }
+
+    /**
+     * Get dateCandidature
+     *
+     * @return \DateTime 
+     */
+    public function getDateCandidature()
+    {
+        return $this->dateCandidature;
+    }
+
+    /**
+     * Set adresse
+     *
+     * @param string $adresse
+     * @return Candidat
+     */
+    public function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    /**
+     * Get adresse
+     *
+     * @return string 
+     */
+    public function getAdresse()
+    {
+        return $this->adresse;
+    }
+
+    /**
+     * Set tel
+     *
+     * @param string $tel
+     * @return Candidat
+     */
+    public function setTel($tel)
+    {
+        $this->tel = $tel;
+
+        return $this;
+    }
+
+    /**
+     * Get tel
+     *
+     * @return string 
+     */
+    public function getTel()
+    {
+        return $this->tel;
+    }
+
+    /**
+     * Set these_titre
+     *
+     * @param string $theseTitre
+     * @return Candidat
+     */
+    public function setTheseTitre($theseTitre)
+    {
+        $this->these_titre = $theseTitre;
+
+        return $this;
+    }
+
+    /**
+     * Get these_titre
+     *
+     * @return string 
+     */
+    public function getTheseTitre()
+    {
+        return $this->these_titre;
+    }
+
+    /**
+     * Set these_resume
+     *
+     * @param string $theseResume
+     * @return Candidat
+     */
+    public function setTheseResume($theseResume)
+    {
+        $this->these_resume = $theseResume;
+
+        return $this;
+    }
+
+    /**
+     * Get these_resume
+     *
+     * @return string 
+     */
+    public function getTheseResume()
+    {
+        return $this->these_resume;
+    }
+
+    /**
+     * Set these_adeq
+     *
+     * @param string $theseAdeq
+     * @return Candidat
+     */
+    public function setTheseAdeq($theseAdeq)
+    {
+        $this->these_adeq = $theseAdeq;
+
+        return $this;
+    }
+
+    /**
+     * Get these_adeq
+     *
+     * @return string 
+     */
+    public function getTheseAdeq()
+    {
+        return $this->these_adeq;
+    }
+
+    /**
+     * Set these_prog
+     *
+     * @param string $theseProg
+     * @return Candidat
+     */
+    public function setTheseProg($theseProg)
+    {
+        $this->these_prog = $theseProg;
+
+        return $this;
+    }
+
+    /**
+     * Get these_prog
+     *
+     * @return string 
+     */
+    public function getTheseProg()
+    {
+        return $this->these_prog;
+    }
+
+    /**
+     * Set these_retour
+     *
+     * @param string $theseRetour
+     * @return Candidat
+     */
+    public function setTheseRetour($theseRetour)
+    {
+        $this->these_retour = $theseRetour;
+
+        return $this;
+    }
+
+    /**
+     * Get these_retour
+     *
+     * @return string 
+     */
+    public function getTheseRetour()
+    {
+        return $this->these_retour;
+    }
+
+    /**
+     * Set these_struct
+     *
+     * @param string $theseStruct
+     * @return Candidat
+     */
+    public function setTheseStruct($theseStruct)
+    {
+        $this->these_struct = $theseStruct;
+
+        return $this;
+    }
+
+    /**
+     * Get these_struct
+     *
+     * @return string 
+     */
+    public function getTheseStruct()
+    {
+        return $this->these_struct;
+    }
+
+    /**
+     * Set these_unite
+     *
+     * @param string $theseUnite
+     * @return Candidat
+     */
+    public function setTheseUnite($theseUnite)
+    {
+        $this->these_unite = $theseUnite;
+
+        return $this;
+    }
+
+    /**
+     * Get these_unite
+     *
+     * @return string 
+     */
+    public function getTheseUnite()
+    {
+        return $this->these_unite;
+    }
+
+    /**
+     * Set these_directeur
+     *
+     * @param string $theseDirecteur
+     * @return Candidat
+     */
+    public function setTheseDirecteur($theseDirecteur)
+    {
+        $this->these_directeur = $theseDirecteur;
+
+        return $this;
+    }
+
+    /**
+     * Get these_directeur
+     *
+     * @return string 
+     */
+    public function getTheseDirecteur()
+    {
+        return $this->these_directeur;
+    }
+
+    /**
+     * Set diplomes
+     *
+     * @param \Dosi\TheseFondationBundle\Entity\Document $diplomes
+     * @return Candidat
+     */
+    public function setDiplomes(\Dosi\TheseFondationBundle\Entity\Document  $diplomes = null)
+    {
+        $this->diplomes = $diplomes;
+
+        return $this;
+    }
+
+    /**
+     * Get diplomes
+     *
+     * @return \Dosi\TheseFondationBundle\Entity\Document 
+     */
+    public function getDiplomes()
+    {
+        return $this->diplomes;
+    }
+
+    /**
+     * Set lettre_dir_these
+     *
+     * @param \Dosi\TheseFondationBundle\Entity\Document $lettreDirThese
+     * @return Candidat
+     */
+    public function setLettreDirThese(\Dosi\TheseFondationBundle\Entity\Document  $lettreDirThese = null)
+    {
+        $this->lettre_dir_these = $lettreDirThese;
+
+        return $this;
+    }
+
+    /**
+     * Get lettre_dir_these
+     *
+     * @return \Dosi\TheseFondationBundle\Entity\Document 
+     */
+    public function getLettreDirThese()
+    {
+        return $this->lettre_dir_these;
+    }
+
+    /**
+     * Set lettre_dir_unite
+     *
+     * @param \Dosi\TheseFondationBundle\Entity\Document $lettreDirUnite
+     * @return Candidat
+     */
+    public function setLettreDirUnite(\Dosi\TheseFondationBundle\Entity\Document  $lettreDirUnite = null)
+    {
+        $this->lettre_dir_unite = $lettreDirUnite;
+
+        return $this;
+    }
+
+    /**
+     * Get lettre_dir_unite
+     *
+     * @return \Dosi\TheseFondationBundle\Entity\Document 
+     */
+    public function getLettreDirUnite()
+    {
+        return $this->lettre_dir_unite;
+    }
+
+    /**
+     * Set these_PB
+     *
+     * @param boolean $thesePB
+     * @return Candidat
+     */
+    public function setThesePB($thesePB)
+    {
+        $this->these_PB = $thesePB;
+
+        return $this;
+    }
+
+    /**
+     * Get these_PB
+     *
+     * @return boolean 
+     */
+    public function getThesePB()
+    {
+        return $this->these_PB;
+    }
+
+    /**
+     * Set these_JHF
+     *
+     * @param boolean $theseJHF
+     * @return Candidat
+     */
+    public function setTheseJHF($theseJHF)
+    {
+        $this->these_JHF = $theseJHF;
+
+        return $this;
+    }
+
+    /**
+     * Get these_JHF
+     *
+     * @return boolean 
+     */
+    public function getTheseJHF()
+    {
+        return $this->these_JHF;
+    }
+}

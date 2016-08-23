@@ -1,0 +1,28 @@
+security:
+    encoders:
+        Dosi\AuthBundle\Security\Core\User\LdapUser: plaintext
+    role_hierarchy:
+        ROLE_GESTION:     ROLE_USER
+        ROLE_ADMIN:       [ ROLE_GESTION]
+    providers:
+        ldap:
+            id: dosi_ldap.security.user.provider
+    firewalls:
+        backend:
+            pattern: ^/backend
+            provider:  ldap
+            sso:
+                manager: admin_sso
+                login_action: false
+                logout_action: false
+                create_users: false
+                default_target_path: /backend
+                check_path: /backend
+            logout: true
+            anonymous: true
+            switch_user: true
+    access_control:
+        - { path: ^/backend, roles: ROLE_ADMIN }
+
+
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <title>{% block title %}Thèse - Fondation{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('bundles/dosithesefondation/css/bootstrap.css') }}" type="text/css" />
+        <link href="{{ asset('bundles/dosithesefondation/css/bootstrap-theme.min.css')}}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('bundles/dosithesefondation/css/jquery.fancybox.css') }}" type="text/css" />
+        <link href="{{ asset('bundles/dosithesefondation/css/jquery-ui-1.10.4.custom.min.css')}}" rel="stylesheet">
+        <link href="{{ asset('bundles/dosithesefondation/css/basic.css')}}" rel="stylesheet">
+        <link href="{{ asset('bundles/dosithesefondation/css/dropzone.css')}}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('bundles/dosithesefondation/css/these-fondation.css') }}" type="text/css" />
+    {% endblock %}
+    {% block javascripts %}
+        <script type="text/javascript" src="{{ asset('bundles/dosithesefondation/js/jquery-2.1.0.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/dosithesefondation/js/jquery.fancybox.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/dosithesefondation/js/dropzone.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/dosithesefondation/js/bootstrap.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/dosithesefondation/js/jquery-ui-1.10.4.custom.min.js') }}"></script>
+    {% endblock %}
+
+
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+
+<div class="uapv_wrapper container-fluid">
+
+    <div class="page-header">
+                <span id="logo">
+                    <a href="http://www.univ-avignon.fr/"><img src="{{ asset('bundles/dosithesefondation/images/logo_uapv.gif') }}" /></a>
+                </span>
+        <div id="header"></div>
+        <div id="recrutement_title">
+            <span>Appel à projet pour la recherche</span>
+        </div>
+        <div id="toolbar">
+            <p>Fondation de l'Université</p>
+        </div>
+    </div>
+
+    <div class='page-content'>
+
+        {% block body %}{% endblock %}
+
+    </div>
+
+    <div class="uapv_footer"></div>
+    <div class="uapv_footnote">
+        <p><a target="_blank" href="mailto:fondation@univ-avignon.fr">Contacter la Fondation</a></p>
+        <p>Université d'Avignon et des Pays de Vaucluse - Tous droits réservés &copy;2015</p>
+    </div>
+</div>
+
+</body>
+</html>

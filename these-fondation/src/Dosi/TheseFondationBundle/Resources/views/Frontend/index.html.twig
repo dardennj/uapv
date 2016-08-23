@@ -1,0 +1,147 @@
+{% extends "DosiTheseFondationBundle:Frontend:base.html.twig" %}
+
+{% block body %}
+    <div id="presentationCadre">
+        <h1>Formulaire de candidature</h1>
+
+        <div id="block_index">
+
+            <div class="row">
+                <p>Cet appel à projets vise à offrir à des étudiants brillants et motivés des conditions exemplaires pour réaliser des projets de Doctorats ambitieux et innovants autours des axes identitaires : </p>
+                <p class="axe">Culture, Patrimoine et Société Numérique et Agro&Sciences</p>
+            </div>
+            <div class="row">
+                <form class="form-horizontal" action="/" method="post" {{ form_enctype(form) }}>
+                    {{ form_errors(form) }}
+
+                    {% if error %}
+                        <div id="msg-error" class="alert alert-danger">{{ error }}</div>
+                    {% endif %}
+                    <legend>Candidature</legend>
+                    <div class="form-group">
+                        <label class="control-label  col-xs-5" for="{{ form.these_PB.vars.id }}">Bourse de Doctorat Pierre Bergé :</label>
+                        <div class="col-xs-7">
+                            {{ form_widget(form.these_PB) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label  col-xs-5" for="{{ form.these_JHF.vars.id }}">Bourse Jean-Henri Fabre – Ville d’Avignon :</label>
+                        <div class="col-xs-7">
+                            {{ form_widget(form.these_JHF) }}
+                        </div>
+                    </div>
+
+                    <legend>Identification</legend>
+                    <div class="form-group">
+                        <label class="control-label  col-xs-5" for="{{ form.nom.vars.id }}">Nom :</label>
+                        <div class="col-xs-7">
+                            {{ form_widget(form.nom) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label  col-xs-5" for="{{ form.prenom.vars.id }}">Prénom :</label>
+                        <div class="col-xs-7">
+                            {{ form_widget(form.prenom) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label  col-xs-5" for="{{ form.adresse.vars.id }}">Adresse :</label>
+                        <div class="col-xs-7">
+                            {{ form_widget(form.adresse) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label  col-xs-5" for="{{ form.tel.vars.id }}">Téléphone :</label>
+                        <div class="col-xs-7">
+                            {{ form_widget(form.tel) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label  col-xs-5" for="{{ form.email.vars.id }}">Mail :</label>
+                        <div class="col-xs-7">
+                            {{ form_widget(form.email) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label  col-xs-5" for="{{ form.diplomes.vars.id }}">Parcours avec copie des diplômes, relevés de notes et (eventuellement) lettre de recommandation du responsable du diplôme :</label>
+                        <div class="col-xs-7">
+                            {{  form_widget(form.diplomes)}}
+                        </div>
+                    </div>
+                    <legend>La thèse</legend>
+                    <div class="form-group">
+                        <label class="control-label  col-xs-5" for="{{ form.these_titre.vars.id }}">Titre de la thèse :</label>
+                        <div class="col-xs-7">
+                            {{ form_widget(form.these_titre) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label  col-xs-5" for="{{ form.these_resume.vars.id }}">Résumé :</label>
+                        <div class="col-xs-7">
+                            {{ form_widget(form.these_resume) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label  col-xs-5" for="{{ form.these_adeq.vars.id }}">Adéquation avec l'appel à projet :</label>
+                        <div class="col-xs-7">
+                            {{ form_widget(form.these_adeq) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label  col-xs-5" for="{{ form.these_prog.vars.id }}">Grandes lignes du programme de recherche envisagé (2 PAGES MAXI) :</label>
+                        <div class="col-xs-7">
+                            {{ form_widget(form.these_prog) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label  col-xs-5" for="{{ form.these_retour.vars.id }}">Retombée pour le territoire, retombées économiques et partenariat scientifique et industriel ou institutionnel dans lequel s'inscrit le travail :</label>
+                        <div class="col-xs-7">
+                            {{ form_widget(form.these_retour) }}
+                        </div>
+                    </div>
+                    <legend>Encadrement et structure d'accueil </legend>
+                    <div class="form-group">
+                        <label class="control-label  col-xs-5" for="{{ form.these_struct.vars.id }}">Ecole Doctorale de rattachement (ED 536, Agrosciences et Sciences ou ED 537, Culture et Patrimoine)</label>
+                        <div class="col-xs-7">
+                            {{ form_widget(form.these_struct) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label  col-xs-5" for="{{ form.these_unite.vars.id }}">Unité de recherche d'accueil :</label>
+                        <div class="col-xs-7">
+                            {{ form_widget(form.these_unite) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label  col-xs-5" for="{{ form.these_directeur.vars.id }}">Directeur de thèse (appartenant à l'ED en question) :</label>
+                        <div class="col-xs-7">
+                            {{ form_widget(form.these_directeur) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label  col-xs-5" for="{{ form.lettre_dir_these.vars.id }}">Lettre du Directeur de thèse :</label>
+                        <div class="col-xs-7">
+                            {{  form_widget(form.lettre_dir_these) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label  col-xs-5" for="{{ form.lettre_dir_unite.vars.id }}">Lettre du Directeur d'unité :</label>
+                        <div class="col-xs-7">
+                            {{  form_widget(form.lettre_dir_unite) }}
+                        </div>
+                    </div>
+
+                    {{ form_rest(form) }}
+
+                    <div style="clear: both"></div>
+                    <div class="control-group">
+                        <div class="controls center">
+                            <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-new-window" ></span>  Valider</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
